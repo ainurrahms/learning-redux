@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-function Button() {
+function Button(props) {
+  const { onClick, text } = props;
   return (
-    <div>Button</div>
-  )
+    <div>
+      <button onClick={onClick}>{text}</button>
+    </div>
+  );
 }
 
-export default Button
+Button.propTypes = {
+  onClick: PropTypes.func,
+  text: PropTypes.string
+};
+
+export default Button;
